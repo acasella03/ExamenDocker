@@ -81,3 +81,9 @@
 ## Ejemplo:
 1. Instalación del PrestaShop:
    ![InstalacionPrestaShop](./imagenes/Instalación_Final_PrestaShop.png)
+
+2. Eliminar la carpeta install del contenedor Prestashop para poder continuar
+   ![EliminarCarpetaInstall](./imagenes/EliminarCarpetaInstall.png)
+
+3. Tienda Online (Shopper) funcionando:
+   ![TiendaOnlineFuncionando](./imagenes/TiendaOnlineFuncionando.png)
