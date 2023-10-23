@@ -3,39 +3,40 @@
 ## Pasos para Instalación de PrestaShop con docker-compose
 1. Buscar la información de PrestaShop en https://hub.docker.com/r/prestashop/prestashop/ <br>donde tendremos la información de cómo crear el documento .yml<br><br>
 2. Con toda la información anterior podemos crear nuestro docker-compose.yml<br><br>
-```
-version: '3.3'
-services:
-  db_prestashop:
-    image: mysql:5.7
-    ports:
+   ```
+   version: '3.3'
+   services:
+   db_prestashop:
+   image: mysql:5.7
+   ports:
       - "3307:3306"
-    volumes:
-      - db_data:/var/lib/mysql
+   volumes:
+   - db_data:/var/lib/mysql
 
-    environment:
-      - MYSQL_ROOT_PASSWORD=prestashop
-      - MYSQL_DATABASE=prestashop
-      - MYSQL_USER=prestashop
-      - MYSQL_PASSWORD=prestashop
+       environment:
+         - MYSQL_ROOT_PASSWORD=prestashop
+         - MYSQL_DATABASE=prestashop
+         - MYSQL_USER=prestashop
+         - MYSQL_PASSWORD=prestashop
 
-  presta:
-    depends_on:
-      - db_prestashop
-    image: prestashop/prestashop:latest
-    ports:
-      - "8080:80"
-    volumes:
-      - './web:/var/www/html'
-    environment:
-      DB_SERVER: db_prestashop
-      DB_USER: prestashop
-      DB_PASSWORD: prestashop
-      DB_NAME: prestashop
-volumes:
-  db_data: {}
-```
+   presta:
+   depends_on:
+   - db_prestashop
+   image: prestashop/prestashop:latest
+   ports:
+   - "8080:80"
+   volumes:
+   - './web:/var/www/html'
+   environment:
+   DB_SERVER: db_prestashop
+   DB_USER: prestashop
+   DB_PASSWORD: prestashop
+   DB_NAME: prestashop
+   volumes:
+   db_data: {}
+      ```
 <br><br>
+
 3. Esta configuración de Docker Compose permite ejecutar PrestaShop junto con una base de datos MySQL en contenedores Docker. <br>A continuación, explicaré las partes más importantes del archivo:<br>
     ```
     version: '3'
