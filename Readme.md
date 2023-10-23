@@ -79,3 +79,5 @@
 6. Para probarlo se debe colocar en el buscador web: localhost:80 o mi ip (http://10.0.9.17:80)
 
 ## Ejemplo:
+1. Instalación del PrestaShop:
+   ![InstalacionPrestaShop](./imagenes/Instalación_Final_PrestaShop.png)
